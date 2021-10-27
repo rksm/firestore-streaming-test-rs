@@ -22,7 +22,7 @@ async fn main() -> Result<()> {
     let env_file = ".env";
     let _env_path = dotenv::from_filename(env_file).expect(".env");
 
-    let cache_dir: PathBuf = "./data/payments".into();
+    let cache_dir: PathBuf = "./data".into();
     std::fs::create_dir_all(&cache_dir)?;
 
     let acct = auth::FirebaseServiceAccount::from_default_env_var()?;
